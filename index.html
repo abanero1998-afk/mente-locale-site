@@ -1,93 +1,94 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MENTE LOCALE</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet"/>
+<html lang="it"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MENTE LOCALE</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet"/>
 <style>
-:root{--cyan:#4de4ff;--wa:#25D366;--muted:#9aa3b8}
+:root{--cyan:#5cecff;--wa:#25D366;--muted:#9aa6bd}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:#050508;color:#f4f7ff;font-family:Outfit,system-ui,sans-serif}
-.splat{position:fixed;inset:0;pointer-events:none;z-index:0;background:
-radial-gradient(circle at 8% 10%,rgba(70,220,255,.35),transparent 22%),
-radial-gradient(circle at 92% 8%,rgba(168,85,247,.32),transparent 24%),
-radial-gradient(circle at 10% 90%,rgba(56,189,248,.22),transparent 26%),
-radial-gradient(circle at 90% 88%,rgba(192,132,252,.28),transparent 24%);mix-blend-mode:screen}
-.page{position:relative;z-index:1;width:min(1180px,calc(100% - 28px));margin:28px auto 48px}
-.shell{border-radius:28px;padding:18px;background:linear-gradient(180deg,rgba(16,18,28,.72),rgba(8,10,16,.82));border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(22px) saturate(160%);box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.08)}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:86px;padding:8px 16px 8px 8px;border-radius:22px;background:radial-gradient(circle at 20% 40%,rgba(80,60,160,.35),transparent 42%),linear-gradient(90deg,rgba(10,12,22,.55),rgba(16,18,32,.4));border:1px solid rgba(255,255,255,.1);overflow:visible}
-.brand{margin:-42px 0 -30px -12px;text-decoration:none;color:#fff;font-weight:800;font-size:clamp(1.4rem,4vw,2rem);letter-spacing:.02em;text-shadow:0 0 18px #00E5FF,0 10px 24px rgba(0,0,0,.5);line-height:.9;transform:rotate(-6deg)}
-.brand small{display:block;color:#67e8f9;font-size:.72em;transform:translateX(18px)}
-.links{display:flex;gap:22px}
-.links a{color:#d7deee;text-decoration:none;font-size:.92rem}
-.links a.active{box-shadow:0 2px 0 var(--cyan)}
-.wa{background:#25D366;color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:11px 16px}
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;padding:34px 18px 10px}
-.pill{display:inline-flex;border:1px solid rgba(90,200,255,.28);background:rgba(20,40,70,.35);color:#cfefff;border-radius:999px;padding:7px 12px;font-size:.72rem;letter-spacing:.08em;font-weight:600;margin-bottom:18px}
-h1{font-size:clamp(2.1rem,4.6vw,3.55rem);line-height:.95;font-weight:800;letter-spacing:-.03em}
-h1 .cyan{color:var(--cyan);display:block}
-.lead{color:var(--muted);max-width:540px;margin:16px 0 22px;line-height:1.55}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-.btn-ghost{padding:11px 16px;border-radius:999px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.16)}
-.ticks{display:flex;flex-wrap:wrap;gap:14px 18px;color:#b7c0d4;font-size:.86rem}
-.panel{border-radius:20px;padding:18px 16px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px)}
+html,body{background:#06060b;color:#f3f6ff;font-family:Outfit,system-ui,sans-serif}
+#webgl,.fx{position:fixed;inset:0;pointer-events:none}
+.fx{background:radial-gradient(circle at 6% 8%,rgba(80,230,255,.32),transparent 20%),radial-gradient(circle at 94% 6%,rgba(170,90,255,.28),transparent 22%),radial-gradient(circle at 8% 92%,rgba(50,180,255,.16),transparent 24%),radial-gradient(circle at 92% 90%,rgba(200,130,255,.22),transparent 22%);mix-blend-mode:screen}
+.wrap{position:relative;z-index:2;width:min(1220px,calc(100% - 28px));margin:28px auto 90px}
+.stage{border-radius:32px;padding:18px 18px 34px;background:linear-gradient(180deg,rgba(18,20,32,.62),rgba(8,10,18,.78));border:1px solid rgba(255,255,255,.1);box-shadow:0 40px 100px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.12);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:92px;padding:8px 16px;border-radius:24px;background:radial-gradient(circle at 16% 40%,rgba(90,70,180,.42),transparent 40%),linear-gradient(90deg,rgba(8,10,22,.55),rgba(14,16,30,.35));border:1px solid rgba(255,255,255,.12);overflow:visible}
+.brand{margin:-48px 0 -30px -8px;display:flex;flex-direction:column;text-decoration:none;color:#fff;font-family:Syne,sans-serif;font-weight:800;line-height:.78;letter-spacing:-.04em;font-size:clamp(1.7rem,4.2vw,2.55rem);transform:rotate(-7deg);filter:drop-shadow(0 0 14px rgba(0,229,255,.7));text-transform:uppercase}
+.brand b{padding-left:.35em}
+.links{display:flex;gap:26px}.links a{color:#d5dced;text-decoration:none;font-size:.95rem;position:relative}
+.links a:after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--cyan);transform:scaleX(0);transition:.25s}
+.links a.active:after,.links a:hover:after{transform:scaleX(1)}
+.btn-wa{display:inline-flex;align-items:center;background:var(--wa);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 18px;box-shadow:0 10px 28px rgba(37,211,102,.28)}
+.hero{display:grid;grid-template-columns:1.12fr .88fr;gap:32px;padding:36px 18px 8px;align-items:center}
+.eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;margin-bottom:18px;border:1px solid rgba(92,236,255,.28);background:rgba(20,40,70,.32);color:#c9f4ff;font-size:.72rem;letter-spacing:.12em;font-weight:600}
+h1{font-family:Syne,sans-serif;font-size:clamp(2.35rem,5.4vw,4.05rem);line-height:.92;letter-spacing:-.04em;font-weight:800}
+h1 em{font-style:normal;color:var(--cyan);display:block;text-shadow:0 0 28px rgba(92,236,255,.25)}
+.lead{color:var(--muted);max-width:540px;margin:16px 0 24px;font-size:1.05rem;line-height:1.6;font-weight:300}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.btn-ghost{padding:12px 18px;border-radius:999px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);font-weight:600}
+.checks{display:flex;flex-wrap:wrap;gap:14px 18px;color:#b7c3d8;font-size:.88rem}
+.glass{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:20px;backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.panel{padding:20px 18px 16px}
 .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-.metric{border-radius:14px;padding:12px 10px;background:rgba(8,16,28,.45);border:1px solid rgba(255,255,255,.06)}
-.metric b{display:block;font-size:1.15rem;color:#5eead4}
-.metric span{color:#93a0b8;font-size:.72rem}
-.sec{padding:28px 10px 8px;text-align:center}
-.mini{display:inline-block;background:#1a2a4a;color:#9ad8ff;border-radius:999px;padding:5px 10px;font-size:.68rem;letter-spacing:.12em;font-weight:700;margin-bottom:10px}
-.services{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:18px 8px}
-.card{text-align:center;padding:22px 14px;min-height:200px;background:rgba(255,255,255,.04);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:16px}
-.ico{width:48px;height:48px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%,#7dd3fc,#3b82f6 40%,#6d28d9)}
-.card p{color:#97a2b8;font-size:.8rem;margin-top:8px}
-.foot{text-align:center;color:#8ea0b8;font-size:.84rem;padding:16px 8px}
-@media(max-width:980px){.links{display:none}.hero,.services,.metrics{grid-template-columns:1fr}}
+.metric{padding:12px 10px;border-radius:14px;background:rgba(6,12,24,.5);border:1px solid rgba(255,255,255,.07)}
+.metric b{display:block;color:#5eead4;font-size:1.2rem}.metric span{color:#8fa0b8;font-size:.72rem}
+.chart{margin-top:14px;height:84px}.chart svg{width:100%;height:100%}
+.sec{padding:38px 10px 8px;text-align:center}
+.tag{display:inline-block;background:#182848;color:#9ad8ff;border-radius:999px;padding:5px 11px;font-size:.68rem;letter-spacing:.16em;font-weight:700;margin-bottom:10px}
+.sec h2{font-family:Syne,sans-serif;font-size:clamp(1.55rem,3vw,2.15rem)}
+.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:18px 8px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:18px 8px}
+.card{text-align:center;padding:24px 16px 20px;min-height:220px;transition:transform .28s,box-shadow .28s}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,.28),0 0 30px rgba(92,236,255,.08)}
+.ico{width:54px;height:54px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#b8ecff,#3b82f6 46%,#6d28d9);box-shadow:0 0 28px rgba(56,189,248,.28)}
+.ico svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card p{color:#97a4bb;font-size:.82rem;margin-top:8px;line-height:1.5}
+.industry{display:block;text-decoration:none;color:inherit;padding:26px 22px;text-align:left;min-height:180px}
+.industry .k{font-size:.68rem;letter-spacing:.16em;color:var(--cyan);font-weight:700;margin-bottom:8px}
+.industry h3{font-family:Syne,sans-serif;font-size:1.35rem;margin-bottom:8px}
+.gbar{margin:22px 8px 0;padding:18px 20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;border-radius:18px;border:1px solid rgba(134,239,172,.22);background:rgba(10,28,18,.42)}
+.foot{text-align:center;color:#86a0b8;padding:18px 8px}
+.dock{position:fixed;right:18px;bottom:18px;z-index:20;display:flex;flex-direction:column;gap:10px}
+.dock a{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(18px);color:#fff;text-decoration:none}
+.dock .wa{background:rgba(37,211,102,.22)}.dock .ig{background:rgba(225,48,108,.18)}
+@media(max-width:980px){.links{display:none}.hero,.grid5,.grid3,.metrics{grid-template-columns:1fr}}
 </style></head>
 <body>
-<div class="splat"></div>
-<div class="page"><div class="shell">
+<canvas id="webgl"></canvas><div class="fx"></div>
+<div class="wrap"><div class="stage">
 <nav>
-<a class="brand" href="#top">MENTE<small>LOCALE</small></a>
-<div class="links">
-<a class="active" href="#top">Home</a>
-<a href="#servizi">Servizi</a>
-<a href="#come">Come Funziona</a>
-<a href="#risultati">Case Study</a>
-<a href="#contatti">Contatti</a>
-</div>
-<a class="wa" href="https://wa.me/393444106229" target="_blank" rel="noopener">Parla su WhatsApp</a>
+<a class="brand" href="#top">MENTE<b>LOCALE</b></a>
+<div class="links"><a class="active" href="#top">Home</a><a href="#settori">Servizi</a><a href="#come">Come Funziona</a><a href="#risultati">Case Study</a><a href="#contatti">Contatti</a></div>
+<a class="btn-wa" href="https://wa.me/393444106229" target="_blank" rel="noopener">Parla su WhatsApp</a>
 </nav>
 <section class="hero" id="top">
 <div>
-<div class="pill">• NUOVO SISTEMA 2024 • PER LOCALI E RISTORANTI</div>
-<h1>PIÙ CLIENTI MENO SBATTI <span class="cyan">IN 7 GIORNI</span></h1>
+<div class="eyebrow">• NUOVO SISTEMA 2024 • PER LOCALI E RISTORANTI</div>
+<h1>PIÙ CLIENTI MENO SBATTI <em>IN 7 GIORNI</em></h1>
 <p class="lead">Sistema di acquisizione clienti automatizzato per bar, ristoranti e locali. Più prenotazioni. Più clienti. Zero stress. Risultati in 7 giorni.</p>
-<div class="actions">
-<a class="wa" href="https://wa.me/393444106229?text=Voglio%20iniziare" target="_blank" rel="noopener">Inizia su WhatsApp →</a>
-<a class="btn-ghost" href="#come">Scopri come funziona</a>
+<div class="row"><a class="btn-wa" href="https://wa.me/393444106229?text=Voglio%20iniziare" target="_blank" rel="noopener">Inizia su WhatsApp →</a><a class="btn-ghost" href="#come">Scopri come funziona</a></div>
+<div class="checks"><span>✓ Setup in 48h</span><span>✓ Nessun contratto lungo</span><span>✓ Supporto 1:1 via WhatsApp</span></div>
 </div>
-<div class="ticks"><span>✓ Setup in 48h</span><span>✓ Nessun contratto lungo</span><span>✓ Supporto 1:1 via WhatsApp</span></div>
+<aside class="glass panel" id="risultati"><h3>Risultati Giorno 7</h3>
+<div class="metrics"><div class="metric"><b>+47</b><span>Clienti</span></div><div class="metric"><b>+32%</b><span>Prenotazioni</span></div><div class="metric"><b>+89</b><span>Messaggi WhatsApp</span></div></div>
+<div class="chart"><svg viewBox="0 0 360 80" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#67e8f9" stop-opacity=".38"/><stop offset="1" stop-color="#67e8f9" stop-opacity="0"/></linearGradient></defs><path d="M0,62 C40,58 55,48 80,50 C110,53 130,28 160,32 C190,36 210,22 240,26 C270,30 300,18 330,20 L360,16 L360,80 L0,80 Z" fill="url(#g)"/><path d="M0,62 C40,58 55,48 80,50 C110,53 130,28 160,32 C190,36 210,22 240,26 C270,30 300,18 330,20 L360,16" fill="none" stroke="#67e8f9" stroke-width="2"/></svg></div>
+</aside></section>
+<section class="sec" id="settori"><div class="tag">SCEGLI IL TUO SETTORE</div><h2>Tre sistemi, una mente</h2></section>
+<div class="grid3">
+<a class="glass industry card" href="ristorazione.html"><div class="k">A · RISTORAZIONE SMART</div><h3>Tavolo Sempre Pieno</h3><p>Menu QR, comande, Deliveroo e prenotazioni WhatsApp. +30% coperti.</p></a>
+<a class="glass industry card" href="parrucchieri.html"><div class="k">B · PARRUCCHIERI / ESTETISTI</div><h3>Agenda Blindata</h3><p>Calendario IA, app clienti, zero buchi. −80% no-show.</p></a>
+<a class="glass industry card" href="ferramenta.html"><div class="k">C · FERRAMENTA / NEGOZI</div><h3>Nemmeno una vite persa</h3><p>Inventario IA, click &amp; collect, cassa collegata. Vendi anche di notte.</p></a>
 </div>
-<aside class="panel" id="risultati">
-<h3>Risultati Giorno 7</h3>
-<div class="metrics">
-<div class="metric"><b>+47</b><span>Clienti</span></div>
-<div class="metric"><b>+32%</b><span>Prenotazioni</span></div>
-<div class="metric"><b>+89</b><span>Messaggi WhatsApp</span></div>
+<section class="sec" id="servizi"><div class="tag">COSA FACCIAMO</div><h2>I nostri 5 servizi</h2></section>
+<div class="grid5">
+<article class="glass card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v3M7 6l-2 2m14-2 2 2M5 12H3m18 0h-2M8 16a4 4 0 0 0 8 0"/><path d="M9 10V8a3 3 0 0 1 6 0v2"/></svg></div><h3>Ads Meta &amp; Google</h3><p>Campagne ads ottimizzate per far arrivare clienti locali subito</p></article>
+<article class="glass card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M20 11.5A8.5 8.5 0 1 1 11 4.1"/><path d="M8.5 13.2 11 15l4.5-5"/></svg></div><h3>Automazioni WhatsApp</h3><p>Chatbot e risposte automatiche 24/7 per non perdere nessun lead</p></article>
+<article class="glass card"><div class="ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/></svg></div><h3>CRM &amp; Lead Follow-up</h3><p>Gestione contatti, follow-up automatici e reminder per chiudere</p></article>
+<article class="glass card"><div class="ico"><svg viewBox="0 0 24 24"><path d="m12 3 2.3 5.4L20 9.2l-4 4.1.9 5.7L12 16.5 7.1 19l.9-5.7-4-4.1 5.7-.8z"/></svg></div><h3>Recensioni &amp; Reputazione</h3><p>Aumenta le recensioni Google e costruisci reputazione 5 stelle</p></article>
+<article class="glass card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h10v6H4zM14 9h6v10H8v-4"/></svg></div><h3>Sito &amp; Funnel Ottimizzato</h3><p>Landing page ad alta conversione progettata per convertire</p></article>
 </div>
-</aside>
-</section>
-<section class="sec" id="servizi"><div class="mini">COSA FACCIAMO</div><h2>I NOSTRI 5 SERVIZI</h2></section>
-<div class="services">
-<article class="card"><div class="ico">📣</div><h3>Ads Meta &amp; Google</h3><p>Campagne ads ottimizzate per far arrivare clienti locali subito</p></article>
-<article class="card"><div class="ico">💬</div><h3>Automazioni WhatsApp</h3><p>Chatbot e risposte automatiche 24/7 per non perdere nessun lead</p></article>
-<article class="card"><div class="ico">🗄️</div><h3>CRM &amp; Lead Follow-up</h3><p>Gestione contatti, follow-up automatici e reminder per chiudere la vendita</p></article>
-<article class="card"><div class="ico">⭐</div><h3>Recensioni &amp; Reputazione</h3><p>Aumenta le recensioni Google e costruisci reputazione 5 stelle</p></article>
-<article class="card"><div class="ico">🏷️</div><h3>Sito &amp; Funnel Ottimizzato</h3><p>Landing page ad alta conversione progettata per convertire</p></article>
-</div>
-<section class="sec" id="come"><div class="mini">COME FUNZIONA</div><h2>Attivazione rapida, risultati in 7 giorni</h2></section>
-<p class="foot" id="contatti">✓ Oltre 100 locali hanno incrementato i clienti in 7 giorni</p>
+<section class="sec" id="come"><div class="tag">COME FUNZIONA</div><h2>Attivazione rapida, risultati in 7 giorni</h2></section>
+<div class="gbar" id="contatti"><div><strong>Garanzia 14 giorni.</strong> Soddisfatto o rimborsato. Senza domande. Lo mettiamo a contratto.</div><a class="btn-wa" href="https://wa.me/393444106229?text=Garanzia%2014%20giorni" target="_blank" rel="noopener">Chiedi il contratto</a></div>
+<p class="foot">✓ Oltre 100 locali hanno incrementato i clienti in 7 giorni</p>
 </div></div>
+<div class="dock"><a class="wa" href="https://wa.me/393444106229" target="_blank" rel="noopener">WA</a><a class="ig" href="https://instagram.com/" target="_blank" rel="noopener">IG</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>(function(){const c=document.getElementById('webgl');if(!c||!window.THREE)return;const T=THREE,s=new T.Scene();s.fog=new T.FogExp2(0x030308,.02);const cam=new T.PerspectiveCamera(55,innerWidth/innerHeight,.1,200);cam.position.z=28;const r=new T.WebGLRenderer({canvas:c,antialias:true,alpha:true});r.setPixelRatio(Math.min(devicePixelRatio,2));r.setSize(innerWidth,innerHeight);r.setClearColor(0,0);const N=160,R=24,pos=new Float32Array(N*3),vel=[];for(let i=0;i<N;i++){pos[i*3]=(Math.random()-.5)*R*1.6;pos[i*3+1]=(Math.random()-.5)*R;pos[i*3+2]=(Math.random()-.5)*R*.8;vel.push({x:(Math.random()-.5)*.012,y:(Math.random()-.5)*.01,z:(Math.random()-.5)*.01});}const pg=new T.BufferGeometry();pg.setAttribute('position',new T.BufferAttribute(pos,3));s.add(new T.Points(pg,new T.PointsMaterial({size:.16,color:0x67e8f9,transparent:true,opacity:.85,blending:T.AdditiveBlending,depthWrite:false})));const ico=new T.Mesh(new T.IcosahedronGeometry(4.2,1),new T.MeshBasicMaterial({color:0x22d3ee,wireframe:true,transparent:true,opacity:.16}));s.add(ico);const mouse={x:0,y:0,tx:0,ty:0};addEventListener('pointermove',e=>{mouse.tx=e.clientX/innerWidth*2-1;mouse.ty=-(e.clientY/innerHeight*2-1)});(function loop(){requestAnimationFrame(loop);mouse.x+=(mouse.tx-mouse.x)*.06;mouse.y+=(mouse.ty-mouse.y)*.06;for(let i=0;i<N;i++){pos[i*3]+=vel[i].x;pos[i*3+1]+=vel[i].y;pos[i*3+2]+=vel[i].z;if(Math.abs(pos[i*3])>R)vel[i].x*=-1;if(Math.abs(pos[i*3+1])>R*.7)vel[i].y*=-1;}pg.attributes.position.needsUpdate=true;ico.rotation.y+=.004+mouse.x*.002;cam.position.x+=(mouse.x*3-cam.position.x)*.04;cam.lookAt(0,0,0);r.render(s,cam);})();})();</script>
 </body></html>
