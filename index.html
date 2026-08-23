@@ -1,67 +1,93 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MENTE LOCALE — La tua attività diventa smart in 7 giorni</title>
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MENTE LOCALE</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--cyan:#4de4ff;--wa:#25D366;--muted:#9aa3b8}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#050508;color:#f4f7ff;font-family:Outfit,system-ui,sans-serif}
+.splat{position:fixed;inset:0;pointer-events:none;z-index:0;background:
+radial-gradient(circle at 8% 10%,rgba(70,220,255,.35),transparent 22%),
+radial-gradient(circle at 92% 8%,rgba(168,85,247,.32),transparent 24%),
+radial-gradient(circle at 10% 90%,rgba(56,189,248,.22),transparent 26%),
+radial-gradient(circle at 90% 88%,rgba(192,132,252,.28),transparent 24%);mix-blend-mode:screen}
+.page{position:relative;z-index:1;width:min(1180px,calc(100% - 28px));margin:28px auto 48px}
+.shell{border-radius:28px;padding:18px;background:linear-gradient(180deg,rgba(16,18,28,.72),rgba(8,10,16,.82));border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(22px) saturate(160%);box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.08)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:86px;padding:8px 16px 8px 8px;border-radius:22px;background:radial-gradient(circle at 20% 40%,rgba(80,60,160,.35),transparent 42%),linear-gradient(90deg,rgba(10,12,22,.55),rgba(16,18,32,.4));border:1px solid rgba(255,255,255,.1);overflow:visible}
+.brand{margin:-42px 0 -30px -12px;text-decoration:none;color:#fff;font-weight:800;font-size:clamp(1.4rem,4vw,2rem);letter-spacing:.02em;text-shadow:0 0 18px #00E5FF,0 10px 24px rgba(0,0,0,.5);line-height:.9;transform:rotate(-6deg)}
+.brand small{display:block;color:#67e8f9;font-size:.72em;transform:translateX(18px)}
+.links{display:flex;gap:22px}
+.links a{color:#d7deee;text-decoration:none;font-size:.92rem}
+.links a.active{box-shadow:0 2px 0 var(--cyan)}
+.wa{background:#25D366;color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:11px 16px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;padding:34px 18px 10px}
+.pill{display:inline-flex;border:1px solid rgba(90,200,255,.28);background:rgba(20,40,70,.35);color:#cfefff;border-radius:999px;padding:7px 12px;font-size:.72rem;letter-spacing:.08em;font-weight:600;margin-bottom:18px}
+h1{font-size:clamp(2.1rem,4.6vw,3.55rem);line-height:.95;font-weight:800;letter-spacing:-.03em}
+h1 .cyan{color:var(--cyan);display:block}
+.lead{color:var(--muted);max-width:540px;margin:16px 0 22px;line-height:1.55}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.btn-ghost{padding:11px 16px;border-radius:999px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.16)}
+.ticks{display:flex;flex-wrap:wrap;gap:14px 18px;color:#b7c0d4;font-size:.86rem}
+.panel{border-radius:20px;padding:18px 16px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px)}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.metric{border-radius:14px;padding:12px 10px;background:rgba(8,16,28,.45);border:1px solid rgba(255,255,255,.06)}
+.metric b{display:block;font-size:1.15rem;color:#5eead4}
+.metric span{color:#93a0b8;font-size:.72rem}
+.sec{padding:28px 10px 8px;text-align:center}
+.mini{display:inline-block;background:#1a2a4a;color:#9ad8ff;border-radius:999px;padding:5px 10px;font-size:.68rem;letter-spacing:.12em;font-weight:700;margin-bottom:10px}
+.services{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:18px 8px}
+.card{text-align:center;padding:22px 14px;min-height:200px;background:rgba(255,255,255,.04);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:16px}
+.ico{width:48px;height:48px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%,#7dd3fc,#3b82f6 40%,#6d28d9)}
+.card p{color:#97a2b8;font-size:.8rem;margin-top:8px}
+.foot{text-align:center;color:#8ea0b8;font-size:.84rem;padding:16px 8px}
+@media(max-width:980px){.links{display:none}.hero,.services,.metrics{grid-template-columns:1fr}}
+</style></head>
 <body>
-  <canvas id="webgl"></canvas>
-  <div class="vignette"></div>
-  <div class="grain"></div>
-  <div class="wrap">
-    <nav>
-      <a class="brand" href="#top"><span class="brand-logo" role="img" aria-label="MENTE LOCALE"></span></a>
-      <div class="nav-links">
-        <a href="#servizi">Servizi</a>
-        <a href="#processo">7 giorni</a>
-        <a href="#contatti">Contatti</a>
-        <a class="nav-cta" href="https://wa.me/393444106229" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </nav>
-    <section class="hero" id="top">
-      <div class="hero-inner">
-        <div class="kicker">Intelligenza artificiale per attività reali</div>
-        <h1><span>La tua attività</span><span>diventa smart</span><span>in 7 giorni</span></h1>
-        <p class="hero-sub">Digitalizziamo ristoranti, parrucchieri, ferramenta e negozi con un ecosistema completo.</p>
-        <div class="industries">
-          <a class="industry-card" href="ristorazione.html"><strong>Ristorazione</strong><em>Tavolo sempre pieno</em><span>+30% coperti</span></a>
-          <a class="industry-card" href="parrucchieri.html"><strong>Parrucchieri</strong><em>Agenda blindata</em><span>−80% no-show</span></a>
-          <a class="industry-card" href="ferramenta.html"><strong>Ferramenta</strong><em>Nemmeno una vite persa</em><span>Inventario IA</span></a>
-          <a class="industry-card" href="ferramenta.html"><strong>Negozi</strong><em>Vendi anche di notte</em><span>Click &amp; collect</span></a>
-        </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/393444106229?text=Ciao%20MENTE%20LOCALE" target="_blank" rel="noopener">Parla con noi su WhatsApp</a>
-          <a class="btn btn-ghost" href="#servizi">5 strumenti, 1 mente</a>
-        </div>
-      </div>
-    </section>
-    <section class="block" id="servizi">
-      <div class="block-inner">
-        <div class="section-head"><div class="label">5 strumenti, 1 mente</div><h2>Tutto quello che serve, già integrato</h2></div>
-        <div class="services">
-          <article class="card"><h3>QR Menu</h3><p>Menu digitale sempre aggiornato.</p></article>
-          <article class="card"><h3>Gestionale</h3><p>Clienti, vendite, staff e report.</p></article>
-          <article class="card"><h3>App Appuntamenti</h3><p>Prenotazioni 24/24, meno no-show.</p></article>
-          <article class="card"><h3>Magazzino IA</h3><p>Riordini intelligenti.</p></article>
-          <article class="card"><h3>Cassa Smart</h3><p>Incassi collegati al magazzino.</p></article>
-        </div>
-      </div>
-    </section>
-    <section class="block" id="contatti">
-      <div class="block-inner">
-        <div class="cta-panel">
-          <div><h2>Rendiamo smart la tua attività. Questa settimana.</h2></div>
-          <div class="wa-box"><strong>MENTE LOCALE</strong><a class="phone" href="https://wa.me/393444106229">+39 344 410 6229</a><a class="btn btn-primary" href="https://wa.me/393444106229" target="_blank" rel="noopener">Apri chat</a></div>
-        </div>
-      </div>
-    </section>
-    <footer><span class="brand-logo" role="img" aria-label="MENTE LOCALE"></span><p>La tua attività diventa smart in 7 giorni.</p></footer>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="js/scene.js"></script>
-  <script src="js/ui.js"></script>
-</body>
-</html>
+<div class="splat"></div>
+<div class="page"><div class="shell">
+<nav>
+<a class="brand" href="#top">MENTE<small>LOCALE</small></a>
+<div class="links">
+<a class="active" href="#top">Home</a>
+<a href="#servizi">Servizi</a>
+<a href="#come">Come Funziona</a>
+<a href="#risultati">Case Study</a>
+<a href="#contatti">Contatti</a>
+</div>
+<a class="wa" href="https://wa.me/393444106229" target="_blank" rel="noopener">Parla su WhatsApp</a>
+</nav>
+<section class="hero" id="top">
+<div>
+<div class="pill">• NUOVO SISTEMA 2024 • PER LOCALI E RISTORANTI</div>
+<h1>PIÙ CLIENTI MENO SBATTI <span class="cyan">IN 7 GIORNI</span></h1>
+<p class="lead">Sistema di acquisizione clienti automatizzato per bar, ristoranti e locali. Più prenotazioni. Più clienti. Zero stress. Risultati in 7 giorni.</p>
+<div class="actions">
+<a class="wa" href="https://wa.me/393444106229?text=Voglio%20iniziare" target="_blank" rel="noopener">Inizia su WhatsApp →</a>
+<a class="btn-ghost" href="#come">Scopri come funziona</a>
+</div>
+<div class="ticks"><span>✓ Setup in 48h</span><span>✓ Nessun contratto lungo</span><span>✓ Supporto 1:1 via WhatsApp</span></div>
+</div>
+<aside class="panel" id="risultati">
+<h3>Risultati Giorno 7</h3>
+<div class="metrics">
+<div class="metric"><b>+47</b><span>Clienti</span></div>
+<div class="metric"><b>+32%</b><span>Prenotazioni</span></div>
+<div class="metric"><b>+89</b><span>Messaggi WhatsApp</span></div>
+</div>
+</aside>
+</section>
+<section class="sec" id="servizi"><div class="mini">COSA FACCIAMO</div><h2>I NOSTRI 5 SERVIZI</h2></section>
+<div class="services">
+<article class="card"><div class="ico">📣</div><h3>Ads Meta &amp; Google</h3><p>Campagne ads ottimizzate per far arrivare clienti locali subito</p></article>
+<article class="card"><div class="ico">💬</div><h3>Automazioni WhatsApp</h3><p>Chatbot e risposte automatiche 24/7 per non perdere nessun lead</p></article>
+<article class="card"><div class="ico">🗄️</div><h3>CRM &amp; Lead Follow-up</h3><p>Gestione contatti, follow-up automatici e reminder per chiudere la vendita</p></article>
+<article class="card"><div class="ico">⭐</div><h3>Recensioni &amp; Reputazione</h3><p>Aumenta le recensioni Google e costruisci reputazione 5 stelle</p></article>
+<article class="card"><div class="ico">🏷️</div><h3>Sito &amp; Funnel Ottimizzato</h3><p>Landing page ad alta conversione progettata per convertire</p></article>
+</div>
+<section class="sec" id="come"><div class="mini">COME FUNZIONA</div><h2>Attivazione rapida, risultati in 7 giorni</h2></section>
+<p class="foot" id="contatti">✓ Oltre 100 locali hanno incrementato i clienti in 7 giorni</p>
+</div></div>
+</body></html>
